@@ -7,7 +7,7 @@
  *section header: Section description
  *Return: ends the code block
 */
-void main(void)
+int main(void)
 {
 	puts("\"Programming is like building a multilingual puzzle");
 	return (0);
