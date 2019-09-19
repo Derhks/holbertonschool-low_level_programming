@@ -1,6 +1,13 @@
 #include <stdio.h>
 
-int main(void);
+/**
+ *main - Main function
+ *puts - output of characters and strings
+ *Description: Display a message
+ *section header: Section description
+ *Return: ends the code block
+*/
+void main(void)
 {
 	puts("\"Programming is like building a multilingual puzzle");
 	return (0);
