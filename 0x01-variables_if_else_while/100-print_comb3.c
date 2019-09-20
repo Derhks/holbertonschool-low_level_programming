@@ -21,8 +21,11 @@ int main(void)
 			{
 				putchar(numb1);
 				putchar(numb2);
-				putchar(',');
-				putchar(' ');
+				if (!((numb1 == '8') && (numb2 == '9')))
+				{
+					putchar(',');
+					putchar(' ');
+				}
 			}
 		}
 	}
