@@ -27,11 +27,11 @@ int main(void)
 						putchar(numb1);
 						putchar(numb2);
 						putchar(numb3);
-						if (!(numb1 == '7' && numb2 == '8' && numb3 == '9'))
-						{
-							putchar(',');
-							putchar(' ');
-						}
+					if (!(numb1 == '7' && numb2 == '8' && numb3 == '9'))
+					{
+						putchar(',');
+						putchar(' ');
+					}
 					}
 				}
 			}
