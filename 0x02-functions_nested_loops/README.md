@@ -1,0 +1,1 @@
+**In this directory we will find the solution to several exercises, in the programming language C**
