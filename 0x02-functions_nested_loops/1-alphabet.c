@@ -1,11 +1,10 @@
 #include "holberton.h"
 
 /**
- *main - Main function
+ *print_alphabet - This is a function prototype
  *_putchar - write a character, of unsigned char type, to stdout
- *Description: Display Holberton
+ *Description: Display the alphabet in lowercase
  *section header: Section description
- *Return: ends the code block
  */
 
 void print_alphabet(void)
