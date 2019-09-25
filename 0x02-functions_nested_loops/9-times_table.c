@@ -1,7 +1,7 @@
 #include "holberton.h"
 
 /**
- *times_tables - This is a function prototype
+ *times_table - This is a function prototype
  *Description: Display the 9 times table
  *section header: Section description
  *Return: end of the function main
