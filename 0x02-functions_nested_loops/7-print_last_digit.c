@@ -2,7 +2,7 @@
 
 /**
  *print_last_digit - This is a function prototype
- *@r: is a parameter, it recive the results from function main
+ *@r: it recive the results from function main
  *Description: Display the last digit of a number
  *section header: Section description
  *Return: end of the function print_last_digit
@@ -10,16 +10,14 @@
 
 int print_last_digit(int r)
 {
-	int last;
+	int last_digit;
 
-	if (r >= 0)
+	last_digit = r % 10;
+
+	if (last_digit < 0)
 	{
-		last = r % 10;
+		last_digit = last_digit * -1;
 	}
-	else if (r < 0)
-	{
-		last = -r % 10;
-	}
-	_putchar(last + '0');
-	return (last);
+	_putchar(last_digit + '0');
+	return (last_digit);
 }
