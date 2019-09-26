@@ -4,7 +4,7 @@
  *print_numbers - This is a function prototype
  *Description: Display the numbers, from 0 to 9
  *section header: Section description
- *Return: The result of the block of code 
+ *Return: The result of the block of code
  */
 
 void print_numbers(void)
