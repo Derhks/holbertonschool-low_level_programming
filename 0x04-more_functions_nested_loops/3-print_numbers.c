@@ -2,14 +2,14 @@
 
 /**
  *print_numbers - This is a function prototype
- *Description: Display 1 if the letter is lowercase and 0 if don't
+ *Description: Display the numbers, from 0 to 9
  *section header: Section description
- *Return: 1 if the letter is lowercase and 0 if don't
+ *Return: The result of the block of code 
  */
 
 void print_numbers(void)
 {
-	int num;
+	char num;
 
 	for (num = 0; num <= 9; num++)
 	{
