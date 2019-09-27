@@ -23,6 +23,10 @@ int main(void)
 		}
 		else if ((tst % 5) == 0)
 		{
+			if (tst == 100)
+				{
+					printf("Buzz");
+				}
 			printf("Buzz ");
 		}
 		else
