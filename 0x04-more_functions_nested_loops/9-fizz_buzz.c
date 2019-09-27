@@ -29,7 +29,7 @@ int main(void)
 		{
 			printf("%d", tst);
 		}
-		if(tst < 100)
+		if (tst < 100)
 		{
 			printf(" ");
 		}
