@@ -16,9 +16,9 @@ int main(void)
 		if ((number % max_prime) == 0)
 		{
 			number = number / max_prime;
-			printf("%d\n", max_prime);
 			max_prime--;
 		}
 	}
+	printf("%d\n", max_prime);
 	return (0);
 }
