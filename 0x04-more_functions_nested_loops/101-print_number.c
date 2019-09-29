@@ -14,11 +14,16 @@ void print_number(int n)
 
 	y = ((n % 1000) % 100);
 
-	if (n < 0 && n > -100)
+	if(n <= -10 && n > -100)
 	{
-		_putchar(z);
-		_putchar(-n / 10 + '0');
-		_putchar(-n % 10 + '0');
+		putchar('-');
+		putchar(-n / 10 + '0');
+		putchar(-n % 10 + '0');
+	}
+	else if(n < 0 && n > -10)
+	{
+		putchar('-');
+		putchar(-n % 10 + '0');
 	}
 	else if (n >= 0 && n < 10)
 	{
