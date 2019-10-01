@@ -1,5 +1,5 @@
-  
 #include "holberton.h"
+
 /**
  *reset_to_98 - This is a function prototype
  *@n: This variable recive the value of the function main
