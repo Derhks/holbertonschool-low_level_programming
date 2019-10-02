@@ -13,7 +13,7 @@ void print_array(int *a, int n)
 {
 	int count;
 
-	while(count < n)
+	while (count < n)
 	{
 		if (n - 1 == count)
 		{
