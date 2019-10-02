@@ -11,7 +11,7 @@
 
 void print_array(int *a, int n)
 {
-	int count;
+	int count = 0;
 
 	while (count < n)
 	{
