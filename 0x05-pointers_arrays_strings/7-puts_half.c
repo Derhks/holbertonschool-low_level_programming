@@ -18,10 +18,10 @@ void puts_half(char *str)
 	}
 	if (count1 % 2 != 0)
 	{
-		count1++;
+		count1 += 1;
 	}
 	count2 = count1 / 2;
-	while (count2 < count1)
+	while (str[count2] != '\0')
 	{
 		_putchar(str[count2]);
 		count2++;
