@@ -6,6 +6,7 @@
  * @src: This variable recive the value of the function main
  * Description: Function that copies the string pointed to by src
  * section header: Section description
+ * Return: Returns the counter value to the main function
  */
 
 char *_strcpy(char *dest, char *src)
