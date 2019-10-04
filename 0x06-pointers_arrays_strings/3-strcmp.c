@@ -14,20 +14,18 @@ int _strcmp(char *s1, char *s2)
 	int count1 = 0;
 	int sum;
 
-	for ( ; s1[count1] != '\0'; count1++)
+	while (s1[count1] != '\0' && s2[count1] != '\0')
 	{
-		if (s2[count1] != '\0')
+		if (s1[count1] == s2[count1])
 		{
-			if (s1[count1] == s2[count1])
-			{
-				sum = s1[count1] - s2[count1];
-			}
-			if (s1[count1] != s2[count1])
-			{
-				sum = s1[count1] - s2[count1];
-			}
+			count1++;
+		}
+		if (s1[count1] != s2[count1])
+		{
+			sum = s1[count1] - s2[count1];
 			break;
 		}
+		return (0);
 	}
 	return (sum);
 }
