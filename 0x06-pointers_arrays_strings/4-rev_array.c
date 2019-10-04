@@ -13,6 +13,7 @@ void reverse_array(int *a, int n)
 	{
 		int count1 = 0;
 		unsigned int numb;
+
 		n -= 1;
 
 		while (count1 < n)
