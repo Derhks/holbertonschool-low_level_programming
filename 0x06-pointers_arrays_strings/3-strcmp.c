@@ -17,7 +17,7 @@ int _strcmp(char *s1, char *s2)
 	{
 		if (s2[count1] != '\0' && (s1[count1] == s2[count1]))
 		{
-
+			count1++;
 		}
 		break;
 	}
