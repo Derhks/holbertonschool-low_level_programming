@@ -3,9 +3,9 @@
 /**
  * *string_toupper - This is a function prototype
  * @s: This variable recive the value of the function main
- * Description: Function that compares two strings
+ * Description: Function that changes all lowercase letters of a string to uppercase
  * section header: Section description
- * Return: Returns the counter value to the main function
+ * Return: Returns the result of the prototype function to the main function
  */
 
 char *string_toupper(char *s)
