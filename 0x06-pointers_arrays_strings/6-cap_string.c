@@ -16,6 +16,10 @@ char *cap_string(char *s)
 
 	for (count1 = 0; s[count1] != '\0'; count1++)
 	{
+		if (s[0] >= 97 && s[0] <= 122)
+		{
+			s[0] = s[0] - 32;
+		} 
 		for (count2 = 0; c[count2] != '\0'; count2++)
 		{
 			if (c[count2] == s[count1 - 1])
