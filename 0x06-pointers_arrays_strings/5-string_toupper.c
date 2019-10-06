@@ -3,7 +3,7 @@
 /**
  * *string_toupper - This is a function prototype
  * @s: This variable recive the value of the function main
- * Description: Function that changes all lowercase letters of a string to uppercase
+ * Description: Changes all lowercase letters of a string to uppercase
  * section header: Section description
  * Return: Returns the result of the prototype function to the main function
  */
