@@ -18,9 +18,7 @@ char *_strchr(char *s, char c)
 		if (s[count1] == c)
 		{
 			return (s + count1);
-		}
-		else
-		{
+			break;
 		}
 	}
 	return (0);
