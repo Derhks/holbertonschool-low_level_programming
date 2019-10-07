@@ -19,6 +19,9 @@ char *_strchr(char *s, char c)
 		{
 			return (s + count1);
 		}
+		else
+		{
+		}
 	}
 	return (0);
 }
