@@ -19,10 +19,6 @@ char *_strchr(char *s, char c)
 		{
 			return (s + count1);
 		}
-		if (c == '\0')
-		{
-			return (0);
-		}
 	}
 	return (0);
 }
