@@ -15,10 +15,9 @@ char *_strchr(char *s, char c)
 
 	for (count1 = 0; s[count1] != '\0'; count1++)
 	{
-		if (s[count1] == c)
+		if (s[count1] == c && s[count1] != '\0')
 		{
 			return (s + count1);
-			break;
 		}
 	}
 	return (0);
