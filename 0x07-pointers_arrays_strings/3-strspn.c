@@ -1,7 +1,7 @@
 #include "holberton.h"
 
 /**
- * int _strspn - This is a function prototype
+ * _strspn - This is a function prototype
  * @s: This variable recive the first value of the function main
  * @accept: This variable recive the second value of the function main
  * Description: Function that gets the length of a prefix substring
@@ -43,5 +43,5 @@ unsigned int _strspn(char *s, char *accept)
 			}
 		}
 	}
-       return (sum2);
+	return (sum2);
 }
