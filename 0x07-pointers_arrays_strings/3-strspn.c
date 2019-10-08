@@ -11,22 +11,22 @@
 
 unsigned int _strspn(char *s, char *accept)
 {
-        int count1;
-        int count2;
+	int count1;
+	int count2;
 
-        for (count1 = 0; s[count1] != '\0'; count1++)
-        {
-                for (count2 = 0; accept[count2] != '\0'; count2++)
-                {
-                        if (s[count1] == accept[count2])
-                        {
-                                break;
-                        }
-                }
-                if (!accept[count2])
-                {
-                        break;
-                }
-        }
-        return (count1);
+	for (count1 = 0; s[count1] != '\0'; count1++)
+	{
+		for (count2 = 0; accept[count2] != '\0'; count2++)
+		{
+			if (s[count1] == accept[count2])
+			{
+				break;
+			}
+		}
+		if (!accept[count2])
+		{
+			break;
+		}
+	}
+	return (count1);
 }
