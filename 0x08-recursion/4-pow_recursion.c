@@ -6,7 +6,7 @@
  * @y: This variable recive the second value of the function main
  * Description: Function that returns the value of x raised to the power of y
  * section header: Section description
- * Return: Pending
+ * Return: The result of the power
  */
 
 int _pow_recursion(int x, int y)
