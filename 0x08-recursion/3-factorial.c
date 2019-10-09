@@ -5,7 +5,7 @@
  * @n: This variable recive the first value of the function main
  * Description: Function that returns the factorial of a given number
  * section header: Section description
- * Return: Always 0
+ * Return: The factorial of the given number
 */
 
 int factorial(int n)
