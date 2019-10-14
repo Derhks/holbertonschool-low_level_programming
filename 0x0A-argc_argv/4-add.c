@@ -1,26 +1,6 @@
 #include <stdio.h>
 
 /**
- *_isdigit - This is a function prototype
- *@c:  This variable recive the value of the function main
- *Description: Checks for a digit (0 through 9)
- *section header: Section description
- *Return: 1 if c is a digit, 0 otherwise
- */
-
-int _isdigit(int c)
-{
-	if (c >= '0' && c <= '9')
-	{
-		return (1);
-	}
-	else
-	{
-		return (0);
-	}
-}
-
-/**
  * _atoi - This is a function prototype
  * @s: This variable recive the value of the function main
  * Description: Function that convert a string to an integer
@@ -75,25 +55,18 @@ int main(int argc, char *argv[])
 	int cnt2;
 	int sm = 0;
 
-	if (argc == 1)
+	for (cnt1 = 1; cnt1 < argc; cnt1++)
 	{
-		printf("0\n");
-	}
-		for (cnt1 = 1; cnt1 < argc; cnt1++)
+		for (cnt2 = 0; argv[cnt1][cnt2] != '\0'; cnt2++)
 		{
-			for (cnt2 = 0; argv[cnt1][cnt2] != '\0'; cnt2++)
+			if (argv[cnt1][cnt2] <= 47 || argv[cnt1][cnt2] >= 58)
 			{
-				if (!(_isdigit(argv[cnt1][cnt2])))
-				{
-					printf("Error\n");
-					return (1);
-				}
-				else
-				{
-					sm += _atoi(argv[cnt1]);
-				}
+				printf("Error\n");
+				return (1);
 			}
 		}
+		sm += _atoi(argv[cnt1]);
+	}
 	printf("%d\n", sm);
 	return (0);
 }
