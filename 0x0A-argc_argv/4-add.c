@@ -88,8 +88,11 @@ int main(int argc, char *argv[])
 					printf("Error\n");
 					return (1);
 				}
+				else
+				{
+					sm += _atoi(argv[cnt1]);
+				}
 			}
-			sm += _atoi(argv[cnt1]);
 		}
 	printf("%d\n", sm);
 	return (0);
