@@ -81,7 +81,6 @@ int main(int argc, char *argv[])
 	}
 		for (cnt1 = 1; cnt1 < argc; cnt1++)
 		{
-			sm += _atoi(argv[cnt1]);
 			for (cnt2 = 0; argv[cnt1][cnt2] != '\0'; cnt2++)
 			{
 				if (!(_isdigit(argv[cnt1][cnt2])))
@@ -90,6 +89,7 @@ int main(int argc, char *argv[])
 					return (1);
 				}
 			}
+			sm += _atoi(argv[cnt1]);
 		}
 	printf("%d\n", sm);
 	return (0);
