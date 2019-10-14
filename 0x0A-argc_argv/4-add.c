@@ -75,20 +75,22 @@ int main(int argc, char *argv[])
 	int cnt2;
 	int sm = 0;
 
-	for (cnt1 = 0; cnt1 < argc; cnt1++)
-	{
-	}
 	if (argc == 1)
 	{
 		printf("0\n");
 	}
-	if (cnt1 > 1)
-	{
-		for (cnt2 = 1; cnt2 < argc; cnt2++)
+		for (cnt1 = 1; cnt1 < argc; cnt1++)
 		{
-			sm += _atoi(argv[cnt2]);
+			sm += _atoi(argv[cnt1]);
+			for (cnt2 = 0; argv[cnt1][cnt2] != '\0'; cnt2++)
+			{
+				if (!(_isdigit(argv[cnt1][cnt2])))
+				{
+					printf("Error\n");
+					return (1);
+				}
+			}
 		}
-		printf("%d\n", sm);
-	}
+	printf("%d\n", sm);
 	return (0);
 }
