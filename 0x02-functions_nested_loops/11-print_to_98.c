@@ -1,10 +1,10 @@
 #include <stdio.h>
 
 /**
- *times_table - This is a function prototype
- *Description: Display the 9 times table
+ *print_to_98 - This is a function prototype
+ *@n: This variable recive the value of the function main
+ *Description: Prints all natural numbers from n to 98
  *section header: Section description
- *Return: end of the function main
  */
 
 void print_to_98(int n)
