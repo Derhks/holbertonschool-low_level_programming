@@ -24,6 +24,10 @@ char *_strdup(char *str)
 	{
 		return (NULL);
 	}
+	if (strng == NULL)
+	{
+		return (NULL);
+	}
 	for (cnt1 = 0; str[cnt1] != '\0'; cnt1++)
 	{
 		strng[cnt1] = str[cnt1];
