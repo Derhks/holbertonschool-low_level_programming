@@ -40,8 +40,8 @@ int **alloc_grid(int width, int height)
 			{
 				free(array2d[cnt1]);
 			}
-			return (NULL);
 			free(array2d);
+			return (NULL);
 		}
 	}
 	for (cnt1 = 0; cnt1 < height; cnt1++)
