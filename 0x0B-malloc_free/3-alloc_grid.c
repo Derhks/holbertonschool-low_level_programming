@@ -34,5 +34,9 @@ int **alloc_grid(int width, int height)
 	{
 		array2d[cnt1] = malloc(sizeof(int) * height);
 	}
+	if (array2d == NULL)
+	{
+		return (NULL);
+	}
 	return (array2d);
 }
