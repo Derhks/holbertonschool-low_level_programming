@@ -17,6 +17,10 @@ int **alloc_grid(int width, int height)
 
 	array2d = malloc(sizeof(int *) * width);
 
+	if (array2d == NULL)
+	{
+		return (NULL);
+	}
 	for (cnt1 = 0; cnt1 < width; cnt1++)
 	{
 		array2d[cnt1] = malloc(sizeof(int) * height);
