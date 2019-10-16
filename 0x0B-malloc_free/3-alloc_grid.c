@@ -13,6 +13,7 @@
 int **alloc_grid(int width, int height)
 {
 	int cnt1;
+	int cnt2;
 	int **array2d;
 
 	if (width <= 0)
@@ -34,6 +35,12 @@ int **alloc_grid(int width, int height)
 	{
 		array2d[cnt1] = malloc(sizeof(int) * height);
 	}
+	for (cnt1 = 0; cnt1 < width; cnt1++)
+	{
+		for (cnt2 = 0; cnt2 < height; cnt2++)
+		{
+			array2d[cnt1][cnt2] = 0;
+		}
+	}
 	return (array2d);
-	free(array2d);
 }
