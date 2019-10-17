@@ -24,14 +24,14 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 		return (NULL);
 	}
 
-	array2d = malloc(sizeof(int *) * nmemb);
+	array2d = malloc(nmemb * size);
 
 	if (array2d == NULL)
 	{
 		return (NULL);
 	}
 
-	for (cnt1 = 0; cnt1 <= size; cnt1++)
+	for (cnt1 = 0; cnt1 <= (nmemb * size); cnt1++)
 	{
 		array2d[cnt1] = 0;
 	}
