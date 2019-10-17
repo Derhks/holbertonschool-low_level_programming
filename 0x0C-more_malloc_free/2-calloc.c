@@ -15,7 +15,7 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 	unsigned int cnt1;
 	char *array2d;
 
-	if (nmemb <= 0 || size <= 0)
+	if (nmemb < 1 || size < 1)
 	{
 		return (NULL);
 	}
@@ -27,7 +27,7 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 		return (NULL);
 	}
 
-	for (cnt1 = 0; cnt1 <= (nmemb * size); cnt1++)
+	for (cnt1 = 0; cnt1 < (nmemb * size); cnt1++)
 	{
 		array2d[cnt1] = 0;
 	}
