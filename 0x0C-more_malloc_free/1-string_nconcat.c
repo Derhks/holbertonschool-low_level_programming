@@ -16,6 +16,14 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	unsigned int cnt1, cnt2;
 	char *strncat;
 
+	if (s1 == NULL)
+	{
+		s1 = "";
+	}
+	if (s2 == NULL)
+	{
+		s2 = "";
+	}
 	for (cnt1 = 0; s1[cnt1] != '\0'; cnt1++)
 	{
 	}
@@ -38,19 +46,9 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	{
 		strncat[cnt1] = s1[cnt1];
 	}
-	if (n >= cnt2)
+	for (cnt2 = 0; (s2[cnt2] != '\0') && (cnt2 < n); cnt2++)
 	{
-		for (cnt2 = 0; s2[cnt2] != '\0'; cnt2++)
-		{
-			strncat[cnt1 + cnt2] = s2[cnt2];
-		}
-	}
-	if (n < cnt2)
-	{
-		for (cnt2 = 0; cnt2 < n; cnt2++)
-		{
-			strncat[cnt1 + cnt2] = s2[cnt2];
-		}
+		strncat[cnt1 + cnt2] = s2[cnt2];
 	}
 	return (strncat);
 }
