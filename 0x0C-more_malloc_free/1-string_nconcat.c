@@ -59,11 +59,11 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 
 int _strlen(char *s)
 {
-        int count = 0;
+	int count = 0;
 
-        while (s[count] != '\0')
-        {
-                count++;
-        }
-        return (count);
+	while (s[count] != '\0')
+	{
+		count++;
+	}
+	return (count);
 }
