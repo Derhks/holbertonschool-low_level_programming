@@ -15,11 +15,7 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 	unsigned int cnt1;
 	char *array2d;
 
-	if (nmemb == 0)
-	{
-		return (NULL);
-	}
-	if (size == 0)
+	if (nmemb <= 0 || size <= 0)
 	{
 		return (NULL);
 	}
