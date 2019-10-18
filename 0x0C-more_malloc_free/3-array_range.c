@@ -12,7 +12,7 @@
 
 int *array_range(int min, int max)
 {
-	int cnt1;
+	int cnt1, cnt2 = min;
 	int *array;
 
 	if (min > max)
@@ -27,9 +27,9 @@ int *array_range(int min, int max)
 		return (NULL);
 	}
 
-	for (cnt1 = 0; cnt1 <= (max - min); cnt1++)
+	for (cnt1 = 0; cnt1 <= (max - min); cnt1++, cnt2++)
 	{
-		array[cnt1] = cnt1;
+		array[cnt1] = cnt2;
 	}
 
 	return (array);
