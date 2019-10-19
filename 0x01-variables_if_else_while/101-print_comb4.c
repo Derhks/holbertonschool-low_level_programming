@@ -1,33 +1,30 @@
 #include <stdio.h>
 
 /**
- *main - Main function
- *putchar - write a character, of unsigned char type, to stdout
- *Description: Display the numbers from 0 to 9
+ *main - This is a main function
+ *Description: Prints all possible different combinations of three digits
  *section header: Section description
- *Return: ends the code block
+ *Return: Always 0
  */
 
 int main(void)
 {
-	int numb1;
-	int numb2;
-	int numb3;
+	int cnt1, cnt2, cnt3;
 
-	for (numb1 = '0'; numb1 <= '9'; numb1++)
+	for (cnt1 = '0'; cnt1 <= '9'; cnt1++)
 	{
-		for (numb2 = '0'; numb2 <= '9'; numb2++)
+		for (cnt2 = '0'; cnt2 <= '9'; cnt2++)
 		{
-			for (numb3 = '0'; numb3 <= '9'; numb3++)
+			for (cnt3 = '0'; cnt3 <= '9'; cnt3++)
 			{
-				if ((numb1 != numb2) && (numb1 != numb3) && (numb2 != numb3))
+				if ((cnt1 != cnt2) && (cnt1 != cnt3) && (cnt2 != cnt3))
 				{
-					if ((numb1 < numb2) && (numb2 < numb3))
+					if ((cnt1 < cnt2) && (cnt2 < cnt3))
 					{
-						putchar(numb1);
-						putchar(numb2);
-						putchar(numb3);
-					if (!(numb1 == '7' && numb2 == '8' && numb3 == '9'))
+						putchar(cnt1);
+						putchar(cnt2);
+						putchar(cnt3);
+					if (!(cnt1 == '7' && cnt2 == '8' && cnt3 == '9'))
 					{
 						putchar(',');
 						putchar(' ');
