@@ -9,7 +9,7 @@
 
 int main(void)
 {
-	int cnt1, strd1, strd2, fbnc;
+	long int cnt1, strd1, strd2, fbnc;
 
 	for (cnt1 = 1; cnt1 <= 50; cnt1++)
 	{
