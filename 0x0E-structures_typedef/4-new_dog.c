@@ -3,10 +3,13 @@
 #include <stdlib.h>
 
 /**
- * print_dog - This is the function prototype
- * @d: This variable recive the first value of the function main
- * Description: Function that prints a struct dog
+ * new_dog - This is the function prototype
+ * @name: This variable recive the first value of the function main
+ * @age: This variable recive the second value of the function main
+ * @owner: This variable recive the thirth value of the function main
+ * Description: Function that creates a new dog
  * section header: Section description
+ * Return: Return a pointer
  */
 
 dog_t *new_dog(char *name, float age, char *owner)
