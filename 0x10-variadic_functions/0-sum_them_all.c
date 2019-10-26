@@ -12,15 +12,14 @@
 
 int sum_them_all(const unsigned int n, ...)
 {
-	if (n == 0)
-	{
-		return (0);
-	}
-
 	unsigned int cnt1;
 	int sm = 0;
 	va_list suma;
 
+	if (n == 0)
+	{
+		return (0);
+	}
 	va_start(suma, n);
 	for (cnt1 = 0; cnt1 < n; cnt1++)
 	{
