@@ -47,7 +47,8 @@ void printf_float(va_list todo)
 
 void printf_string(va_list todo)
 {
-	if (todo == NULL)
+	char *cpr = va_arg(todo, char *);
+	if (cpr == NULL)
 	{
 		printf("(nil)");
 	}
@@ -89,6 +90,6 @@ void print_all(const char * const format, ...)
 		}
 		cnt1++;
 	}
-	putchar('\n');
 	va_end(todo);
+	putchar('\n');
 }
