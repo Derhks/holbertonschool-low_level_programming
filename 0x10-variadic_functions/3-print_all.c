@@ -72,7 +72,7 @@ void print_all(const char * const format, ...)
 		{'c', printf_char},
 		{'i', printf_integer},
 		{'f', printf_float},
-		{'s', printf_string},
+		{'s', printf_string}
 	};
 
 	va_start(todo, format);
