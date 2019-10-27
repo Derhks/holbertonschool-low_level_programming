@@ -52,6 +52,7 @@ void printf_string(va_list todo)
 	if (cpr == NULL)
 	{
 		printf("(nil)");
+		return;
 	}
 	printf("%s", va_arg(todo, char *));
 }
