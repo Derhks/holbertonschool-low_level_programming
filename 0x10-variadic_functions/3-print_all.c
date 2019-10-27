@@ -79,7 +79,7 @@ void print_all(const char * const format, ...)
 		cnt2 = 0;
 		while (all[cnt2].letra)
 		{
-			if (all[cnt2].letra == format[cnt1])
+			if (format[cnt1] == all[cnt2].letra)
 			{
 				printf("%s", sep);
 				all[cnt2].f(todo);
