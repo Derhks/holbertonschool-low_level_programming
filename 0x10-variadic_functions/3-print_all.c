@@ -47,14 +47,14 @@ void printf_float(va_list todo)
 
 void printf_string(va_list todo)
 {
-	/*char *cpr = va_arg(todo, char *);*/
+	char *cpr = va_arg(todo, char *);
 
-	if (todo == NULL)
+	if (cpr == NULL)
 	{
 		printf("(nil)");
 		return;
 	}
-	printf("%s", va_arg(todo, char *));
+	printf("%s", cpr);
 }
 
 /**
