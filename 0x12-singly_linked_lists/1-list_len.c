@@ -9,17 +9,13 @@
  * @h: Recive a string from the main function
  * Description: Function that prints all the elements of a list_t list
  * section Header: Section description
- * Return: h
+ * Return: Number of nodes, otherwise 0.
  */
 
 size_t list_len(const list_t *h)
 {
 	int cnt1 = 0;
 
-	if (h->str == NULL)
-	{
-		printf("[0] (nil)");
-	}
 	while (h != NULL)
 	{
 		h = h->next;
