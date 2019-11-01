@@ -1,14 +1,5 @@
 #include <stdio.h>
 
-/**
- * myStartupFun - This is a function that print before the main function
- * @__attribute__: attribute
- *
- *
- *
- */
-
-
 void myStartupFun(void) __attribute__((constructor));
 
 /**
