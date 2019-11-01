@@ -15,11 +15,11 @@ int _strlen(const char *s)
 {
 	int cnt = 0;
 
-	while (s[count] != '\0')
+	while (s[cnt] != '\0')
 	{
-		count++;
+		cnt++;
 	}
-	return (count);
+	return (cnt);
 }
 
 /**
@@ -34,8 +34,11 @@ int _strlen(const char *s)
 list_t *add_node(list_t **head, const char *str)
 {
 	list_t *new_node = (list_t *) malloc(sizeof(list_t));
-
-	if (new_node != NULL)
+	if (new_node == NULL)
+	{
+		return (NULL);
+	}
+	else
 	{
 		new_node->str = strdup(str);
 		new_node->len = _strlen(str);
