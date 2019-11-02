@@ -2,7 +2,7 @@
 
 /**
  * main - This is a main function
- * Description: Prints the sequence without exceed the value of 4,000,000
+ * Description: Prints the sum of the even-valued terms (sequence of fibonacci)
  * section header: Section description
  * Return: Always 0
  */
@@ -10,30 +10,20 @@
 int main(void)
 {
 	unsigned long int cnt1;
-	unsigned long int strd1, strd2, fbnc;
+	unsigned long int strd1 = 1, strd2 = 2, fbnc, smfbnc = 2;
 
-	for (cnt1 = 1; cnt1 <= 100; cnt1++)
+	for (cnt1 = 1; cnt1 <= 30; cnt1++)
 	{
-		if (cnt1 == 1)
+		fbnc = strd1 + strd2;
+
+		if (fbnc % 2 == 0 && fbnc <= 4000000)
 		{
-			strd1 = 1;
+			smfbnc += fbnc;
 		}
-		else if (cnt1 == 2)
-		{
-			strd2 = 2;
-			printf("%lu", strd2);
-		}
-		else
-		{
-			fbnc = strd1 + strd2;
-			if (fbnc % 2 == 0 && fbnc < 4000000)
-			{
-				printf(", %lu", fbnc);
-			}
-			strd1 = strd2;
-			strd2 = fbnc;
-		}
+		strd1 = strd2;
+		strd2 = fbnc;
 	}
+	printf("%lu", smfbnc);
 	putchar('\n');
 	return (0);
 }
