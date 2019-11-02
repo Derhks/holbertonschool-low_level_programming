@@ -9,25 +9,24 @@
 
 int main(void)
 {
-	long int cnt1;
-	unsigned long int strd1, strd2, fbnc;
+	long double cnt1, strd1, strd2, fbnc;
 
 	for (cnt1 = 1; cnt1 <= 98; cnt1++)
 	{
 		if (cnt1 == 1)
 		{
 			strd1 = 1;
-			printf("%lu, ", strd1);
+			printf("%.0Lf ", strd1);
 		}
 		else if (cnt1 == 2)
 		{
 			strd2 = 2;
-			printf("%lu", strd2);
+			printf("%.0Lf", strd2);
 		}
 		else
 		{
 			fbnc = strd1 + strd2;
-			printf(", %lu", fbnc);
+			printf(", %.0Lf", fbnc);
 			strd1 = strd2;
 			strd2 = fbnc;
 		}
