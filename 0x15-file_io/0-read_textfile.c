@@ -1,7 +1,3 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <fcntl.h>
-#include <unistd.h>
 #include "holberton.h"
 
 /**
@@ -29,7 +25,6 @@ int _strlen(char *s)
  * section header: Section description
  * Return: The actual number of letters it could read and print
  */
-
 
 ssize_t read_textfile(const char *filename, size_t letters)
 {
