@@ -1,0 +1,43 @@
+#include "lists.h"
+
+/**
+ * add_dnodeint_end - This is a function prototype
+ * @head: Recive a double pointer, the address of a list
+ * @n: Receive a const type integer
+ * Description: Function that adds a node at the end of the list
+ * section Header: Section description
+ * Return: A pointer, the address of the new node, otherwise 0.
+ */
+
+
+dlistint_t *add_dnodeint_end(dlistint_t **head, const int n)
+{
+	dlistint_t *new_node = (dlistint_t *) malloc(sizeof(dlistint_t));
+
+	if (new_node == NULL)
+	{
+		exit(0);
+	}
+
+	dlistint_t *tmp = *head;
+
+	new_node->n = n;
+	new_node->next = NULL;
+
+	if (*head == NULL)
+	{
+		new_node->prev = NULL;
+		*head = new_node;
+		return (0);
+	}
+	else
+	{
+		while (tmp->next != NULL)
+		{
+			tmp = tmp->next;
+		}
+		new_node->prev = tmp;
+		tmp->next = new_node;
+	}
+	return (new_node);
+}
