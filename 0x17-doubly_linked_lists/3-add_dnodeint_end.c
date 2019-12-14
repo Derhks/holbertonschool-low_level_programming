@@ -9,7 +9,6 @@
  * Return: A pointer, the address of the new node, otherwise 0.
  */
 
-
 dlistint_t *add_dnodeint_end(dlistint_t **head, const int n)
 {
 	dlistint_t *new_node;
@@ -42,8 +41,8 @@ dlistint_t *add_dnodeint_end(dlistint_t **head, const int n)
 		{
 			tmp = tmp->next;
 		}
-		new_node->prev = tmp;
 		tmp->next = new_node;
+		new_node->prev = tmp;
 	}
 	return (new_node);
 }
