@@ -12,8 +12,7 @@
 
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
-	hash_node_t *new_node_beg = NULL, *tmp = NULL;
-	unsigned long int itr = key_index((const unsigned char *)key, ht->size);
+	hash_node_t *new_node_beg = NULL;
 
 	if (ht == NULL)
 		return (0);
@@ -24,28 +23,44 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		return (0);
 	new_node_beg->key = (char *)key;
 	new_node_beg->value = strdup(value);
-	tmp = ht->array[itr];
-	if (ht->array != NULL)
+	node_handler(ht, new_node_beg);
+	return (0);
+}
+
+/**
+ * node_handler - This is a function prototype
+ * @ht: Pointer to the hash table
+ * @node: Pointer to the new node
+ * Description: Function that adds an element to the hash table
+ * section Header: Section description
+ *
+ */
+
+void node_handler(hash_table_t *ht, hash_node_t *node)
+{
+	unsigned long int itr = key_index((const unsigned char *)node->key, ht->size);
+	hash_node_t *tmp = NULL;
+
+	if (ht->array[itr] != NULL)
 	{
 		tmp = ht->array[itr];
 		while (tmp != NULL)
 		{
-			if (strcmp(tmp->key, new_node_beg->key) == 0)
+			if (strcmp(tmp->key, node->key) == 0)
 				break;
 			tmp = tmp->next;
 		}
 		if (tmp == NULL)
 		{
-			new_node_beg->next = ht->array[itr];
-			ht->array[itr] = new_node_beg;
+			node->next = ht->array[itr];
+			ht->array[itr] = node;
 		}
 		free(tmp->value);
-		tmp->value = strdup(new_node_beg->value);
-		free(new_node_beg->value);
-		free(new_node_beg->key);
-		free(new_node_beg);
+		tmp->value = strdup(node->value);
+		free(node->value);
+		free(node->key);
+		free(node);
 	}
-	new_node_beg->next = NULL;
-	ht->array[itr] = new_node_beg;
-	return (1);
+	node->next = NULL;
+	ht->array[itr] = node;
 }
