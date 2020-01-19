@@ -28,8 +28,8 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	hash_index = key_index((unsigned char *)key, ht->size);
 	if (ht->array[hash_index] == NULL)
 	{
-		new_node_beg->next = NULL;
 		ht->array[hash_index] = new_node_beg;
+		new_node_beg->next = NULL;
 	}
 	else if (ht->array[hash_index] != NULL)
 	{
@@ -40,7 +40,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 			{
 				free(tmp->value);
 				tmp->value = new_node_beg->value;
-				free(new_node_beg->key);
+				//free(new_node_beg->key);
 				free(new_node_beg->value);
 				free(new_node_beg);
 				break;
