@@ -20,6 +20,8 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	if (new_node_beg == NULL)
 		return (0);
 	new_node_beg->key = (char *)key;
+	if (new_node_beg->key == NULL)
+		return (0);
 	new_node_beg->value = strdup(value);
 	if (new_node_beg->value == NULL)
 		return (0);
