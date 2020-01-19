@@ -13,8 +13,6 @@ void hash_table_delete(hash_table_t *ht)
 	unsigned long int itr = 0;
 	hash_node_t *tmp = NULL, *tmp_2 = NULL;
 
-	if (ht == NULL)
-		return;
 	if (ht != NULL)
 	{
 		for (itr = 0; itr <= ht->size; itr++)
