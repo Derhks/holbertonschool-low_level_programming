@@ -1,7 +1,7 @@
 #include "hash_tables.h"
 
 /**
- * unsigned long int hash_djb2 - This is a function prototype
+ * hash_djb2 - This is a function prototype
  * @str: Is a string
  * Description: Function that implement the djb2 algorithm
  * section Header: Section description
