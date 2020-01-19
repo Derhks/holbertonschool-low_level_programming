@@ -52,6 +52,7 @@ void node_handler(hash_table_t *ht, hash_node_t *node)
 				free(node->value);
 				free(node->key);
 				free(node);
+				return;
 			}
 			tmp = tmp->next;
 		}
