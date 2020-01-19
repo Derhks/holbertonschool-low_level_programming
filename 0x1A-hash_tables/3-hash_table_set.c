@@ -12,60 +12,43 @@
 
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
-	hash_node_t *new_node_beg = NULL;
+	hash_node_t *new_node_beg = NULL, *tmp = NULL;
+	unsigned long int hash_index;
 
 	if (ht == NULL || key == NULL)
 		return (0);
+	/*Reservar espacio de memoria para el nuevo nodo*/
 	new_node_beg = malloc(sizeof(hash_node_t));
+	/*Verificar si el espacio de memoria fue reservado*/
 	if (new_node_beg == NULL)
 		return (0);
+	/*Inicializar el nuevo nodo*/
 	new_node_beg->key = (char *)key;
-	if (new_node_beg->key == NULL)
-		return (0);
 	new_node_beg->value = strdup(value);
-	if (new_node_beg->value == NULL)
-		return (0);
-	node_handler(ht, new_node_beg);
-	return (1);
-}
-
-/**
- * node_handler - This is a function prototype
- * @ht: Pointer to the hash table
- * @node: Pointer to the new node
- * Description: Function that adds an element to the hash table
- * section Header: Section description
- *
- */
-
-void node_handler(hash_table_t *ht, hash_node_t *node)
-{
-	unsigned long int itr = 0;
-	hash_node_t *tmp = NULL;
-
-	itr = key_index((const unsigned char *)node->key, ht->size);
-	tmp = ht->array[itr];
-	if (ht->array[itr] != NULL)
+	hash_index = key_index((unsigned char *)key, ht->size);
+	if (ht->array[hash_index] == NULL)
 	{
+		new_node_beg->next = NULL;
+		ht->array[hash_index] = new_node_beg;
+	}
+	else if (ht->array[hash_index] != NULL)
+	{
+		tmp = ht->array[hash_index];
 		while (tmp != NULL)
 		{
-			if (strcmp(tmp->key, node->key) == 0)
+			if (strcmp(tmp->key, new_node_beg->key) == 0)
 			{
 				free(tmp->value);
-				tmp->value = strdup(node->value);
-				free(node->value);
-				free(node->key);
-				free(node);
+				tmp->value = new_node_beg->value;
+				free(new_node_beg->key);
+				free(new_node_beg->value);
+				free(new_node_beg);
 				break;
 			}
 			tmp = tmp->next;
 		}
-		if (tmp == NULL)
-		{
-			node->next = ht->array[itr];
-			ht->array[itr] = node;
-		}
+		new_node_beg->next = ht->array[hash_index];
+		ht->array[hash_index] = new_node_beg;
 	}
-	node->next = NULL;
-	ht->array[itr] = node;
+	return (1);
 }
