@@ -46,7 +46,13 @@ void node_handler(hash_table_t *ht, hash_node_t *node)
 		while (tmp != NULL)
 		{
 			if (strcmp(tmp->key, node->key) == 0)
-				break;
+			{
+				free(tmp->value);
+				tmp->value = strdup(node->value);
+				free(node->value);
+				free(node->key);
+				free(node);
+			}
 			tmp = tmp->next;
 		}
 		if (tmp == NULL)
@@ -54,12 +60,6 @@ void node_handler(hash_table_t *ht, hash_node_t *node)
 			node->next = ht->array[itr];
 			ht->array[itr] = node;
 		}
-		free(tmp->value);
-		tmp->value = strdup(node->value);
-		free(node->value);
-		free(node->key);
-		free(node);
-	}
 	node->next = NULL;
 	ht->array[itr] = node;
 }
