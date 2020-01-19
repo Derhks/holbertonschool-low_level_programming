@@ -14,9 +14,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
 	hash_node_t *new_node_beg = NULL;
 
-	if (ht == NULL)
-		return (0);
-	if (key == NULL)
+	if (ht == NULL || key == NULL)
 		return (0);
 	new_node_beg = malloc(sizeof(hash_node_t));
 	if (new_node_beg == NULL)
@@ -24,7 +22,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	new_node_beg->key = (char *)key;
 	new_node_beg->value = strdup(value);
 	node_handler(ht, new_node_beg);
-	return (0);
+	return (1);
 }
 
 /**
@@ -38,9 +36,10 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 
 void node_handler(hash_table_t *ht, hash_node_t *node)
 {
-	unsigned long int itr = key_index((const unsigned char *)node->key, ht->size);
+	unsigned long int itr = 0;
 	hash_node_t *tmp = NULL;
 
+	itr = key_index((const unsigned char *)node->key, ht->size);
 	if (ht->array[itr] != NULL)
 	{
 		tmp = ht->array[itr];
