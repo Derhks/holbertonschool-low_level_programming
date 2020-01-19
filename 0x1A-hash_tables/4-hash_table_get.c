@@ -16,8 +16,6 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 
 	if (ht != NULL)
 	{
-		if (key == NULL || *key == '\0')
-			return (NULL);
 		tmp = ht->array[hash_idx];
 		while (tmp != NULL)
 		{
