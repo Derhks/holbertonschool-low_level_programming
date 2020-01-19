@@ -21,6 +21,8 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		return (0);
 	new_node_beg->key = (char *)key;
 	new_node_beg->value = strdup(value);
+	if (new_node_beg->value == NULL)
+		return (0);
 	node_handler(ht, new_node_beg);
 	return (1);
 }
@@ -52,7 +54,7 @@ void node_handler(hash_table_t *ht, hash_node_t *node)
 				free(node->value);
 				free(node->key);
 				free(node);
-				return;
+				break;
 			}
 			tmp = tmp->next;
 		}
