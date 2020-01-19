@@ -40,7 +40,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 			{
 				free(tmp->value);
 				tmp->value = new_node_beg->value;
-				//free(new_node_beg->key);
+				free(new_node_beg->key);
 				free(new_node_beg->value);
 				free(new_node_beg);
 				break;
