@@ -44,9 +44,9 @@ void node_handler(hash_table_t *ht, hash_node_t *node)
 	hash_node_t *tmp = NULL;
 
 	itr = key_index((const unsigned char *)node->key, ht->size);
+	tmp = ht->array[itr];
 	if (ht->array[itr] != NULL)
 	{
-		tmp = ht->array[itr];
 		while (tmp != NULL)
 		{
 			if (strcmp(tmp->key, node->key) == 0)
