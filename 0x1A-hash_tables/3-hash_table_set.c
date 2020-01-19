@@ -18,7 +18,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	if (ht == NULL || key == NULL || key == '\0')
 		return (0);
 	/*Reservar espacio de memoria para el nuevo nodo*/
-	new_node_beg = malloc(sizeof(hash_node_t));
+	new_node_beg = (hash_node_t *)malloc(sizeof(hash_node_t));
 	/*Verificar si el espacio de memoria fue reservado*/
 	if (new_node_beg == NULL)
 		return (0);
@@ -28,8 +28,8 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	hash_index = key_index((unsigned char *)key, ht->size);
 	if (ht->array[hash_index] == NULL)
 	{
-		ht->array[hash_index] = new_node_beg;
 		new_node_beg->next = NULL;
+		ht->array[hash_index] = new_node_beg;
 	}
 	else if (ht->array[hash_index] != NULL)
 	{
@@ -38,11 +38,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		{
 			if (strcmp(tmp->key, new_node_beg->key) == 0)
 			{
-				free(tmp->value);
 				tmp->value = new_node_beg->value;
-				free(new_node_beg->key);
-				free(new_node_beg->value);
-				free(new_node_beg);
 				break;
 			}
 			tmp = tmp->next;
