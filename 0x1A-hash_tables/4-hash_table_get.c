@@ -12,18 +12,21 @@
 char *hash_table_get(const hash_table_t *ht, const char *key)
 {
 	hash_node_t *tmp = NULL;
-	unsigned long int hash_idx = key_index((unsigned char *)key, ht->size);
+	unsigned long int hash_idx = 0;
 
 	if (ht == NULL)
 		return (NULL);
-	if (ht->array[hash_idx] != NULL)
+	for (hash_idx = 0; hash_idx < ht->size; hash_idx++)
 	{
-		tmp = ht->array[hash_idx];
-		while (tmp != NULL)
+		if (ht->array[hash_idx] != NULL)
 		{
-			if (strcmp(tmp->key, key) == 0)
-				return (tmp->value);
-			tmp = tmp->next;
+			tmp = ht->array[hash_idx];
+			while (tmp != NULL)
+			{
+				if (strcmp(tmp->key, key) == 0)
+					return (tmp->value);
+				tmp = tmp->next;
+			}
 		}
 	}
 	return (NULL);
