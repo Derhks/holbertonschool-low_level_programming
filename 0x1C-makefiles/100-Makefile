@@ -2,7 +2,7 @@ CC = gcc
 SRC = main.c holberton.c
 NAME = holberton
 OBJ = $(SRC:.c=.o)
-RM = rm -f
+RM = 
 CFLAGS = -Wall -Werror -Wextra -pedantic
 
 all: $(OBJ)
@@ -15,6 +15,6 @@ oclean:
 	$(RM) $(OBJ)
 
 fclean:
-	$(RM) *~ $(NAME) $(OBJ)
+	clean oclean
 
 re: oclean all
