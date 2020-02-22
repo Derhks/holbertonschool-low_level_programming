@@ -10,12 +10,8 @@ def island_perimeter(grid):
                 if y > 0:
                     if grid[y - 1][x] == 1:
                         pmt -= 2
-                elif grid[y + 1][x] == 1:
-                    pmt -= 2
                 if x > 0:
                     if grid[y][x - 1] == 1:
                         pmt -= 2
-                elif grid[y][x + 1] == 1:
-                    pmt -= 2
 
     return pmt
